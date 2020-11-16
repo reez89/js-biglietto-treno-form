@@ -90,6 +90,8 @@ select {
 
 .info_ticket{
     display: flex;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .info_ticket_items{

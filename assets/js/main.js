@@ -2,10 +2,12 @@
 var btnGenera = document.getElementById('btn-genera');
 var btnAnnulla = document.getElementById('btn-annulla');
 
+
+//** BUTTUN GENERA TICKET
+
 btnGenera.addEventListener('click', function(){
-    console.log("genera tickets");
 
-
+    //** DICHIARAZIONE DELLE VARIABILI RIGUARDATI LA TOP CARD
     var myNameInput = document.getElementById('my-name');
     var myName = myNameInput.value;
 
@@ -15,11 +17,13 @@ btnGenera.addEventListener('click', function(){
     var ageInput = document.getElementById('age');
     var age = ageInput.value;
 
-    console.log(myName, kmTotali, age);
+
 
     var prezzoChilometri = 0.21;
     var prezzoBiglietto = kmTotali * prezzoChilometri;
     var newTicket;
+
+    //** FUNZIONE PER ASSEGNARE LE DIVERSE TIPOLOGIE DI OFFERTE AGLI UTENTI
 
     if(age == "minorenne"){
         offerta = "Sconto Minorenni" ;
@@ -34,6 +38,7 @@ btnGenera.addEventListener('click', function(){
     newTicket = prezzoBiglietto ;
 }
 
+    //** DICHIARAZIONE VARIABILI PER LA BOT CARD
 
     var itemNameuser = document.getElementById('passennger_name');
     var itemOfferta = document.getElementById('offerta');
@@ -47,12 +52,17 @@ btnGenera.addEventListener('click', function(){
     itemCodiceCp.innerHTML = Math.floor(Math.random() * (100000 - 90000)) +90000;
     itemCostoBiglietto.innerHTML = newTicket.toFixed(2);
 
+    //** PROPRIETà PER LA VISUALIZAZZIONE DELLA BOTTOM CARD
+
     document.getElementById('ticket-bottom').style.display = "block";
     document.getElementById('txt-bottom-card').style.display = "block";
 });
 
+//** BUTTUN ANNULLA TICKET
 
 btnAnnulla.addEventListener('click', function(){
+
+    //** PROPRIETà PER NASCONDERE LA BOTTOM CARD E I VARI ELEMENTI
 
     document.getElementById('ticket-bottom').style.display = "none";
     document.getElementById('txt-bottom-card').style.display = "none";

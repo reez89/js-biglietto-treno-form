@@ -72,6 +72,7 @@ select {
 
 .txt_bottom{
     margin: 40px;
+    display: none;
 }
 
 .botcard{
@@ -79,6 +80,7 @@ select {
     height: 300px;
     padding: 20px;
     background-color: white;
+    display: none;
 }
 
 .nome_passeggero{

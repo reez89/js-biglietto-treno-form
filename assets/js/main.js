@@ -5,7 +5,6 @@ var btnAnnulla = document.getElementById('btn-annulla');
 btnGenera.addEventListener('click', function(){
     console.log("genera tickets");
 
-    //* Prendere il valore input
 
     var myNameInput = document.getElementById('my-name');
     var myName = myNameInput.value;
@@ -30,6 +29,12 @@ btnGenera.addEventListener('click', function(){
         newTicket = prezzoBiglietto  - (prezzoBiglietto * 0.4);
     }
 
+    else if (age == "maggiorenne"){
+    offerta = "Nessuno Sconto";
+    newTicket = prezzoBiglietto ;
+}
+
+
     var itemNameuser = document.getElementById('passennger_name');
     var itemOfferta = document.getElementById('offerta');
     var itemCarrozza = document.getElementById('carrozza');
@@ -41,4 +46,24 @@ btnGenera.addEventListener('click', function(){
     itemCarrozza.innerHTML = Math.floor(Math.random() * 9) + 1;
     itemCodiceCp.innerHTML = Math.floor(Math.random() * (100000 - 90000)) +90000;
     itemCostoBiglietto.innerHTML = newTicket.toFixed(2);
+
+    document.getElementById('ticket-bottom').style.display = "block";
+    document.getElementById('txt-bottom-card').style.display = "block";
+});
+
+
+btnAnnulla.addEventListener('click', function(){
+
+    document.getElementById('ticket-bottom').style.display = "none";
+    document.getElementById('txt-bottom-card').style.display = "none";
+
+    var myNameInput = document.getElementById('my-name');
+    var kmInput = document.getElementById('km-totali');
+    var ageInput = document.getElementById('age');
+
+     myNameInput.value = " ";
+     kmInput.value = " ";
+     ageInput.value = " ";  
+
+
 });
